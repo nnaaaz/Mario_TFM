@@ -5,7 +5,7 @@
 -- @author TFM:Nnaaaz#0000 (map, lua script)
 -- @author TFM:Pshy#3752 DC:Pshy#7998 (lua script)
 --
--- @require pshy_bonused_mario.lua
+-- @require pshy_bonuses_mario.lua
 -- @require pshy_checkpoints.lua
 -- @require pshy_essentials.lua
 -- @require pshy_loadersync.lua
