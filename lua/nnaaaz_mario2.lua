@@ -204,6 +204,13 @@ end
 
 
 
+function eventPlayerWon(player_name)
+	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
+	tfm.exec.respawnPlayer(player_name)
+end
+
+
+
 function eventInit()
 	for player_name in pairs(tfm.get.room.playerList) do
 		TouchPlayer(player_name)
