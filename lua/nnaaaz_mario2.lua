@@ -82,7 +82,6 @@ for i_coin, coin in ipairs(coins) do
 	coin.type = "MarioCoin"
 	table.insert(pshy.mapdb_maps["mario_1"].bonuses, coin)
 end
-table.insert(mario_maps, "mario_1")
 
 
 
@@ -102,7 +101,6 @@ for i_coin, coin in ipairs(coins) do
 	coin.type = "MarioCoin"
 	table.insert(pshy.mapdb_maps["mario_2"].bonuses, coin)
 end
-table.insert(mario_maps, "mario_2")
 
 
 
@@ -122,7 +120,6 @@ for i_coin, coin in ipairs(coins) do
 	coin.type = "MarioCoin"
 	table.insert(pshy.mapdb_maps["mario_3"].bonuses, coin)
 end
-table.insert(mario_maps, "mario_3")
 
 
 
@@ -142,7 +139,6 @@ for i_coin, coin in ipairs(coins) do
 	coin.type = "MarioCoin"
 	table.insert(pshy.mapdb_maps["mario_4"].bonuses, coin)
 end
-table.insert(mario_maps, "mario_4")
 
 
 
@@ -160,7 +156,6 @@ for i_coin, coin in ipairs(coins) do
 	coin.type = "MarioCoin"
 	table.insert(pshy.mapdb_maps["mario_5"].bonuses, coin)
 end
-table.insert(mario_maps, "mario_5")
 
 
 
