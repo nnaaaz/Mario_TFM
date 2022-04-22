@@ -6,5 +6,7 @@
 -- @author TFM:Pshy#3752 DC:Pshy#7998 (lua script)
 --
 -- @require nnaaaz_mario2.lua
+-- @require pshy_commands_lua.lua
+-- @require pshy_commands_tfm.lua
 -- @require pshy_fcplatform.lua
 -- @require pshy_speedfly.lua
