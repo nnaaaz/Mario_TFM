@@ -209,6 +209,6 @@ function eventInit()
 	for player_name in pairs(tfm.get.room.playerList) do
 		TouchPlayer(player_name)
 	end
-	pshy.newgame_ChatCommandRotc(user, "mario2") -- TODO: have a function for setting the rotation in `pshy_newgame.lua`!
+	pshy.newgame_SetRotation("mario2")
 	tfm.exec.newGame("mario2")
 end
