@@ -20,7 +20,7 @@
 
 
 --- help Page:
-pshy.help_pages["mario2"] = {back = "", title = "Mario 2", text = "\n", commands = {}}
+pshy.help_pages["mario2"] = {back = "", title = "Mario 2", text = "Work in progress.\n", commands = {}}
 pshy.help_pages[""].subpages["mario2"] = pshy.help_pages["mario2"]
 
 
