@@ -7,6 +7,7 @@
 --
 -- @require pshy_bonuses_basic.lua
 -- @require pshy_bonuses_mario.lua
+-- @require pshy_cannons.lua
 -- @require pshy_checkpoints.lua
 -- @require pshy_essentials.lua
 -- @require pshy_loadersync.lua
