@@ -175,7 +175,7 @@ local coins = nil
 
 
 
-function eventnewGame()
+function eventNewGame()
 	if pshy.newgame_current_map and pshy.newgame_current_map.fly_mode then
 		fly_mode = true
 		for player_name in pairs(players_in_room) do
