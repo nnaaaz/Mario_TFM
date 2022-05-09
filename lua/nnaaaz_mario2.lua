@@ -78,8 +78,8 @@ pshy.mapdb_maps["mario_1"].bonuses = {
 	{type = "MarioMushroom", x = 2840, y = 178};
 }
   pshy.mapdb_maps["mario_1"].cannons = {
-    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 3033, y = 258, angle = 0};
-	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5680, y = 426, angle = 0};
+    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 3033, y = 258, angle = -90};
+	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5680, y = 426, angle = -90};
   }
 local coins = {{x = 1435, y = 475}, {x = 1560, y = 305}, {x = 1645, y = 305}, {x = 2000, y = 515}, {x = 2190, y = 200}, {x = 2380, y = 200}, {x = 3000, y = 260}, {x = 3790, y = 405}, {x = 3960, y = 200}, {x = 4500, y = 260}, {x = 4750, y = 260}, {x = 4600, y = 450}, {x = 5020, y = 345}, {x = 5090, y = 345}, {x = 5190, y = 510}, {x = 5300, y = 275}, {x = 5490, y = 275}, {x = 5580, y = 515}, {x = 6125, y = 175}, {x = 6430, y = 195},{x = 9900, y = 383}, {x = 9977, y = 383}, {x = 10071, y = 383}, {x = 10150, y = 383}, {x = 9950, y = 317}, {x = 10030, y = 317}, {x = 10110, y = 317}, {x = 19990, y = 255}, {x = 10075, y = 255}, {x = 10030, y = 200}}
 for i_coin, coin in ipairs(coins) do
@@ -99,8 +99,8 @@ pshy.mapdb_maps["mario_2"].bonuses = {
 	{type = "MarioMushroom", x = 1555, y = 539};
 }
   pshy.mapdb_maps["mario_2"].cannons = {
-    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 2410, y = 211, angle = 0};
-	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5243, y = 172, angle = 0};
+    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 2410, y = 211, angle = -90};
+	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5243, y = 172, angle = -90};
   }
 local coins = {{x = 1330, y = 345}, {x = 1630, y = 130}, {x = 2145, y = 345}, {x = 2390, y = 210}, {x = 2700, y = 450}, {x = 2890, y = 450}, {x = 3220, y = 85}, {x = 3260, y = 85}, {x = 3300, y = 85}, {x = 4145, y = 110}, {x = 4385, y = 110}, {x = 4625, y = 110}, {x = 4480, y = 430}, {x = 4520, y = 430}, {x = 5275, y = 215}, {x = 5530, y = 515}, {x = 12400, y = 160}, {x = 12360, y = 215}, {x = 12445, y = 215}, {x = 12320, y = 277}, {x = 12400, y = 277}, {x = 12480, y = 277}, {x = 12270, y = 343}, {x = 12347, y = 343}, {x = 12441, y = 343}, {x = 12520, y = 343}, {x = 12301, y = 441}, {x = 12370, y = 441}, {x = 12430, y = 441}, {x = 12500, y = 441}}
 for i_coin, coin in ipairs(coins) do
@@ -120,7 +120,7 @@ pshy.mapdb_maps["mario_3"].bonuses = {
 	{type = "MarioMushroom", x = 2735, y = 485};
 }
   pshy.mapdb_maps["mario_3"].cannons = {
-    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 3710, y = 346, angle = 0};
+    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 3710, y = 346, angle = -90};
   }
 local coins = {{x = 835, y = 520}, {x = 955, y = 250}, {x = 1656, y = 110}, {x = 1650, y = 518}, {x = 2184, y = 430}, {x = 2268, y = 69}, {x = 3286, y = 189}, {x = 3326, y = 389}, {x = 3708, y = 89}, {x = 4048, y = 519}, {x = 5075, y = 219}, {x = 5717, y = 177}, {x = 6728, y = 175}, {x = 6768, y = 175}, {x = 12312, y = 175}, {x = 12342, y = 175}, {x = 12372, y = 175}, {x = 12277, y = 262}, {x = 12234, y = 304}, {x = 12191, y = 347}, {x = 12234, y = 379}, {x = 12277, y = 377}, {x = 12312, y = 296}, {x = 12342, y = 296}, {x = 12372, y = 296}, {x = 12407, y = 337}, {x = 12450, y = 379}, {x = 12406, y = 262}, {x = 12449, y = 304}, {x = 12492, y = 347}}
 for i_coin, coin in ipairs(coins) do
@@ -140,7 +140,7 @@ pshy.mapdb_maps["mario_4"].bonuses = {
 	{type = "MarioMushroom", x = 1436, y = 182};
 }
   pshy.mapdb_maps["mario_4"].cannons = {
-    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5412, y = 298, angle = 0};
+    {loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5412, y = 298, angle = -90};
   }
 local coins = {{x =  1015, y = 212}, {x = 1055, y = 212}, {x = 1035, y = 385}, {x = 2055, y = 295}, {x = 2375, y = 465}, {x = 2685, y = 295}, {x = 2955, y = 465}, {x = 3512, y = 383}, {x = 3759, y = 233}, {x = 4435, y = 463}, {x = 4879, y = 463}, {x = 5179, y = 463}, {x = 5670, y = 373}, {x = 5860, y = 373}, {x = 13045, y = 400}, {x = 13085, y = 400}, {x = 13125, y = 400}, {x = 13165, y = 400}, {x = 13205, y = 400}, {x = 13245, y = 400}, {x = 13285, y = 400}, {x = 13325, y = 400}, {x = 13555, y = 360}, {x = 13595, y = 360}, {x = 13635, y = 360}, {x = 13675, y = 360}, {x = 14075, y = 310}, {x = 14115, y = 310}, {x = 14155, y = 310}, {x = 14195, y = 310}}
 for i_coin, coin in ipairs(coins) do
@@ -161,7 +161,7 @@ pshy.mapdb_maps["mario_5"].bonuses = {
 	{type = "MarioMushroom", x = 1564, y = 444};
 }
 pshy.mapdb_maps["mario_5"].cannons = {
-	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5198, y = 244, angle = 0};
+	{loop_delay = 4, loop_delay_offset = 0, type = tfm.enum.shamanObject.cannon, x = 5198, y = 244, angle = -90};
 }
 local coins = {{x =  1188, y = 468}, {x =  1238, y = 468}, {x =  1960, y = 286}, {x =  1960, y = 326}, {x =  2278, y = 160}, {x =  3020, y = 485}, {x =  3150, y = 485}, {x =  3715, y = 145}, {x =  3715, y = 105}, {x =  4310, y = 270}, {x =  4273, y = 470}, {x = 4353, y = 470}, {x = 6010, y = 105}, {x =  6110, y = 185}, {x =  6210, y = 105}, {x =  7240, y = 535}, {x =  7900, y = 125}, {x =  8040, y = 285}, {x =  15075, y = 175}, {x =  15115, y = 175}, {x =  15155, y = 175}, {x =  15295, y = 345}, {x =  15335, y = 345}, {x =  15375, y = 345}, {x =  15715, y = 345}, {x =  15755, y = 345}, {x =  15795, y = 345}, {x =  15935, y = 175}, {x =  15975, y = 175}, {x =  16015, y = 175}}
 for i_coin, coin in ipairs(coins) do
