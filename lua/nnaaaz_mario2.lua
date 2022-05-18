@@ -167,16 +167,10 @@ local coins = nil
 
 
 
-local function TouchPlayerUi(player_name)
-	tfm.exec.addImage("180af536bdc.png", ":0", 10, 30, player_name)
-	ui.addTextArea(arbitrary_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", player_name, 10, 30, 40, 40, 0x0000, 0x000000, 0.1, true)
-end
-
-
-
 --- Called for every player when the script start or when a player join the room.
 local function TouchPlayer(player_name)
-	TouchPlayerUi(player_name)
+	tfm.exec.addImage("180af536bdc.png", ":0", 10, 30, player_name)
+	ui.addTextArea(arbitrary_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", player_name, 10, 30, 40, 40, 0x0000, 0x000000, 0.1, true)
 	local player = players[player_name]
 	if fly_mode then
 		system.bindKeyboard(player_name, 1, true, true)
@@ -196,14 +190,6 @@ function eventNewGame()
 		for player_name in pairs(players_in_room) do
 			system.bindKeyboard(player_name, 1, true, false)
 		end
-	end
-	ui.removeTextArea(arbitrary_close_help_btn_id, user)
-	for player_name, image_id in pairs(modulehelp_images) do
-		tfm.exec.removeImage(image_id)
-	end
-	modulehelp_images = {}
-	for player_name, player in pairs(tfm.get.room.playerList) do
-		TouchPlayerUi(player_name)
 	end
 end
 
