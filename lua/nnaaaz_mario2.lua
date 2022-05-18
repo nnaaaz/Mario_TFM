@@ -60,6 +60,9 @@ system.disableChatCommandDisplay(nil, true)
 local players = pshy.players
 local players_in_room = pshy.players_in_room
 local fly_mode = false
+local arbitrary_help_btn_id = 138
+local arbitrary_close_help_btn_id = 139
+local modulehelp_images = {}
 
 
 
@@ -164,6 +167,24 @@ local coins = nil
 
 
 
+local function TouchPlayerUi(player_name)
+	tfm.exec.addImage("180af536bdc.png", ":0", 10, 30, player_name)
+	ui.addTextArea(arbitrary_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", player_name, 10, 30, 40, 40, 0x0000, 0x000000, 0.1, true)
+end
+
+
+
+--- Called for every player when the script start or when a player join the room.
+local function TouchPlayer(player_name)
+	TouchPlayerUi(player_name)
+	local player = players[player_name]
+	if fly_mode then
+		system.bindKeyboard(player_name, 1, true, true)
+	end
+end
+
+
+
 function eventNewGame()
 	if pshy.newgame_current_map and pshy.newgame_current_map.fly_mode then
 		fly_mode = true
@@ -175,7 +196,15 @@ function eventNewGame()
 		for player_name in pairs(players_in_room) do
 			system.bindKeyboard(player_name, 1, true, false)
 		end
-	end 
+	end
+	ui.removeTextArea(arbitrary_close_help_btn_id, user)
+	for player_name, image_id in pairs(modulehelp_images) do
+		tfm.exec.removeImage(image_id)
+	end
+	modulehelp_images = {}
+	for player_name, player in pairs(tfm.get.room.playerList) do
+		TouchPlayerUi(player_name)
+	end
 end
 
 
@@ -183,16 +212,6 @@ end
 function eventKeyboard(player_name, keycode, down)
 	if down and keycode == 1 and fly_mode then
 		tfm.exec.movePlayer(player_name, 0, 0, true, 0, -55, false)
-	end
-end
-
-
-
---- Called for every player when the script start or when a player join the room.
-local function TouchPlayer(player_name)
-	local player = players[player_name]
-	if fly_mode then
-		system.bindKeyboard(player_name, 1, true, true)
 	end
 end
 
@@ -232,3 +251,19 @@ function eventInit()
 	pshy.newgame_SetRotation("mario2")
 	tfm.exec.newGame("mario2")
 end
+
+
+
+--- !modulehelp
+local function ChatCommandModulehelp(user)
+	if modulehelp_images[user] then
+		tfm.exec.removeImage(modulehelp_images[user])
+		modulehelp_images[user] = nil
+		ui.removeTextArea(arbitrary_close_help_btn_id, user)
+	else
+		modulehelp_images[user] = tfm.exec.addImage("180af52c5ae.png", ":0", 200, 50, user)
+		ui.addTextArea(arbitrary_close_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", user, 580, 100, 30, 30, 0xff0000, 0xff0000, 0.02, true)		
+	end
+end
+pshy.commands["modulehelp"] = {func = ChatCommandModulehelp, desc = "Show the module help.", argc_min = 0, argc_max = 0}
+pshy.perms.everyone["!modulehelp"] = true
