@@ -250,6 +250,7 @@ local function ChatCommandModulehelp(user)
 		modulehelp_images[user] = tfm.exec.addImage("180af52c5ae.png", ":0", 200, 50, user)
 		ui.addTextArea(arbitrary_close_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", user, 580, 100, 30, 30, 0xff0000, 0xff0000, 0.02, true)		
 	end
+	return true
 end
 pshy.commands["modulehelp"] = {func = ChatCommandModulehelp, desc = "Show the module help.", argc_min = 0, argc_max = 0}
 pshy.perms.everyone["!modulehelp"] = true
