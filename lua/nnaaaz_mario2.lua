@@ -230,6 +230,14 @@ end
 
 
 
+function eventLoop(time_elapsed, time_remaining)
+	if time_remaining < 0 then
+		tfm.exec.newGame("mario2")
+	end
+end
+
+
+
 function eventInit()
 	for player_name in pairs(tfm.get.room.playerList) do
 		TouchPlayer(player_name)
