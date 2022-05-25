@@ -69,7 +69,7 @@ local modulehelp_images = {}
 
 
 --- Rotation:
-pshy.mapdb_rotations["mario2"] = {items = {}, autoskip = false, shamans = 0}
+pshy.mapdb_rotations["mario2"] = {items = {}, autoskip = false, is_random = false, shamans = 0}
 local mario_maps = pshy.mapdb_rotations["mario2"].items
 
 
