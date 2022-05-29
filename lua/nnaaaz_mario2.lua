@@ -251,12 +251,14 @@ function eventPlayerWon(player_name)
 	local current_time = os.time()
 	if current_time - map_start_time < minimum_win_time then
 		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
-		pshy.ban_ShadowbanPlayer(player_name, "Won too fast!")
+		pshy.ban_ShadowbanPlayer(player_name, "won too fast")
+		return
 	end
 	local player = players[player_name]
 	if player.last_win_time and current_time - player.last_win_time < minimum_win_time then
 		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
-		pshy.ban_ShadowbanPlayer(player_name, "Won too fast!")
+		pshy.ban_ShadowBanPlayer(player_name, "won too fast")
+		return
 	end
 	player.last_win_time = current_time
 	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
