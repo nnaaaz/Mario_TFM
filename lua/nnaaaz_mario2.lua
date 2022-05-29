@@ -235,6 +235,7 @@ end
 
 
 function eventPlayerRespawn(player_name)
+	players[player_name].last_respawn_time = os.time()
 	tfm.exec.setNameColor(player_name, pshy.players[player_name].mario_name_color)
 end
 
@@ -255,12 +256,12 @@ function eventPlayerWon(player_name)
 		return
 	end
 	local player = players[player_name]
-	if player.last_win_time and current_time - player.last_win_time < minimum_win_time then
+	if player.last_respawn_time and current_time - player.last_respawn_time < minimum_win_time then
 		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
 		pshy.ban_ShadowBanPlayer(player_name, "won too fast")
 		return
 	end
-	player.last_win_time = current_time
+	player.last_respawn_time = current_time
 	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
 	tfm.exec.respawnPlayer(player_name)
 end
