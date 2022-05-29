@@ -5,6 +5,8 @@
 -- @author TFM:Nnaaaz#0000 (map, lua script)
 -- @author TFM:Pshy#3752 DC:Pshy#7998 (lua script)
 --
+-- @require pshy_adminchat.lua
+-- @require pshy_ban.lua
 -- @require pshy_bonuses.lua
 -- @require pshy_bonuses_basic.lua
 -- @require pshy_bonuses_mario.lua
@@ -66,6 +68,8 @@ local fly_mode = false
 local arbitrary_help_btn_id = 138
 local arbitrary_close_help_btn_id = 139
 local modulehelp_images = {}
+local map_start_time = os.time()
+local minimum_win_time = 20000					-- players gets banned if they win faster than this (ms).
 
 
 
@@ -199,6 +203,7 @@ end
 
 
 function eventNewGame()
+	map_start_time = os.time()
 	if pshy.newgame_current_map and pshy.newgame_current_map.fly_mode then
 		fly_mode = true
 		for player_name in pairs(players_in_room) do
@@ -243,6 +248,17 @@ end
 
 
 function eventPlayerWon(player_name)
+	local current_time = os.time()
+	if current_time - map_start_time < minimum_win_time then
+		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
+		pshy.ban_ShadowbanPlayer(player_name, "Won too fast!")
+	end
+	local player = players[player_name]
+	if player.last_win_time and current_time - player.last_win_time < minimum_win_time then
+		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
+		pshy.ban_ShadowbanPlayer(player_name, "Won too fast!")
+	end
+	player.last_win_time = current_time
 	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
 	tfm.exec.respawnPlayer(player_name)
 end
