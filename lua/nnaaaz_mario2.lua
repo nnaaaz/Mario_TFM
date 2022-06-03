@@ -6,6 +6,7 @@
 -- @author TFM:Pshy#3752 DC:Pshy#7998 (lua script)
 --
 -- @require pshy_adminchat.lua
+-- @require pshy_antiguest.lua
 -- @require pshy_ban.lua
 -- @require pshy_bonuses.lua
 -- @require pshy_bonuses_basic.lua
