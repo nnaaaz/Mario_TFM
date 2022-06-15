@@ -232,7 +232,6 @@ end
 
 
 function eventPlayerRespawn(player_name)
-	players[player_name].last_respawn_time = os.time()
 	tfm.exec.setNameColor(player_name, pshy.players[player_name].mario_name_color)
 end
 
@@ -241,6 +240,7 @@ end
 function eventPlayerDied(player_name)
 	tfm.exec.changePlayerSize(player_name, 1)
 	tfm.exec.respawnPlayer(player_name)
+	players[player_name].last_respawn_time = os.time()
 end
 
 
@@ -248,8 +248,8 @@ end
 function eventPlayerWon(player_name)
 	local current_time = os.time()
 	if current_time - map_start_time < minimum_win_time then
-		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast).", player_name))
-		pshy.ban_ShadowbanPlayer(player_name, "won too fast")
+		pshy.adminchat_Message("Anticheat", string.format("%s shadow-banned (won too fast after map load).", player_name))
+		pshy.ban_ShadowbanPlayer(player_name, "won too fast after map load")
 		return
 	end
 	local player = players[player_name]
@@ -261,6 +261,7 @@ function eventPlayerWon(player_name)
 	player.last_respawn_time = current_time
 	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
 	tfm.exec.respawnPlayer(player_name)
+	players[player_name].last_respawn_time = os.time()
 end
 
 
