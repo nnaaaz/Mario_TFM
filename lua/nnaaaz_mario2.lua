@@ -43,7 +43,7 @@ pshy.scores_per_first_wins = {}				-- no firsts
 pshy.scores_per_bonus = 0					-- get points per bonus
 pshy.scores_reset_on_leave = false
 pshy.scores_show = false
-pshy.perms_auto_admin_authors = false		-- add the authors as admin automatically
+pshy.perms_auto_admin_authors = true		-- add the authors as admin automatically
 pshy.authors["Nnaaaz#0000"] = true
 pshy.authors["Pshy#3752"] = true
 
@@ -187,6 +187,8 @@ local coins = nil
 local function TouchPlayer(player_name)
 	tfm.exec.addImage("180af536bdc.png", ":0", 10, 30, player_name)
 	ui.addTextArea(arbitrary_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", player_name, 10, 30, 40, 40, 0x0000, 0x000000, 0.1, true)
+	tfm.exec.chatMessage("• <fc><b>For any suggestions or other games, check this topic:</b></fc>", player_name)
+	tfm.exec.chatMessage("<a:active><b>https://atelier801.com/topic?f=6&t=896069</b></a:active>", player_name)
 	local player = players[player_name]
 	if fly_mode then
 		system.bindKeyboard(player_name, 1, true, true)
