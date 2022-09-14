@@ -279,6 +279,9 @@ function eventNewGame()
 			system.bindKeyboard(player_name, 1, true, false)
 		end
 	end
+	for player_name, player in pairs(players_in_room) do
+		tfm.exec.setPlayerScore(player_name, player.mario_coins or 0)
+	end
 end
 
 
