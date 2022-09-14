@@ -329,7 +329,7 @@ function eventPlayerWon(player_name)
 		return
 	end
 	player.last_respawn_time = current_time
-	tfm.exec.chatMessage(string.format("<bv>[MARIO] <r>%s</r> completed the level!</bv>", player_name))
+	tfm.exec.chatMessage(string.format("<bv>[<strike><b><r>M</r><j>A</j><bv>R</bv><t>I</t><o>O</o></b></strike>] <r>%s</r> completed the level!</bv>", player_name))
 	tfm.exec.respawnPlayer(player_name)
 	player_list[player_name].last_respawn_time = os.time()
 end
@@ -361,7 +361,7 @@ local function ChatCommandModulehelp(user)
 		modulehelp_images[user] = nil
 		ui.removeTextArea(arbitrary_close_help_btn_id, user)
 	else
-		modulehelp_images[user] = tfm.exec.addImage("181acc21e05.png", ":0", 200, 50, user)
+		modulehelp_images[user] = tfm.exec.addImage("1833e25f48b.png", ":0", 200, 50, user)
 		ui.addTextArea(arbitrary_close_help_btn_id, "<p align='center'><font size='128'><a href='event:pcmd modulehelp'>        </a></font></p>", user, 580, 100, 30, 30, 0xff0000, 0xff0000, 0.02, true)		
 	end
 	return true
