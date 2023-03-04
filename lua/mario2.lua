@@ -266,6 +266,7 @@ local function TouchPlayer(player_name)
 	if fly_mode then
 		system.bindKeyboard(player_name, 1, true, true)
 	end
+	tfm.exec.setNameColor(player_name, player.mario_name_color)
 end
 
 
