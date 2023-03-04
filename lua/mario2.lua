@@ -57,8 +57,8 @@ scores.per_bonus = 0					-- get points per bonus
 scores.reset_on_leave = false
 scores.show = false
 perms.auto_admin_authors = true			-- add the authors as admin automatically
-perms.authors[70224600] = "Nnaaaz#0000"
-perms.authors[105766424] = "Pshy#3752"
+perms.authors["Nnaaaz#0000"] = true
+perms.authors["Pshy#3752"] = true
 
 
 
@@ -324,7 +324,7 @@ function eventPlayerWon(player_name)
 	local current_time = os.time()
 	if current_time - map_start_time < minimum_win_time then
 		adminchat.Message("Anticheat", string.format("%s shadow-banned (won too fast after map load).", player_name))
-		ban.ShadowbanPlayer(player_name, "won too fast after map load")
+		ban.ShadowBanPlayer(player_name, "won too fast after map load")
 		return
 	end
 	local player = player_list[player_name]
